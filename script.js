@@ -44,32 +44,37 @@ async function initGhost() {
 function appendMessage(sender, text) {
   const chatBox = document.getElementById("chatBox");
   const div = document.createElement("div");
+
+  // Container alignment
   div.className =
     sender === "you"
-      ? "text-right mb-3"
+      ? "flex justify-end mb-2" // user messages right
       : sender === "system"
-      ? "text-center mb-3"
-      : "text-left mb-3";
+      ? "flex justify-center mb-3"
+      : "flex justify-start mb-3"; // ghost/bot messages left
 
-  let senderColor = "text-gray-200";
-  let senderIcon = "";
+  // Bubble
+  const bubble = document.createElement("span");
+  bubble.className = "chat-bubble"; // base bubble styling
 
   if (sender === "ghost") {
-    const ghostName = window.currentGhost || "";
-    div.innerHTML = `<span class="message ${senderColor}"><b>${ghostName}:</b> ${text}</span>`;
+    const ghostName = window.currentGhost || "Ghost";
+    bubble.classList.add("bot-bubble"); // bot styling
+    bubble.innerHTML = `<b>${ghostName}:</b> ${text}`;
   } else if (sender === "you") {
-    senderColor = "text-blue-400";
-    senderIcon = "";
-    div.innerHTML = `<span class="message ${senderColor}"><b>${senderIcon} You:</b> ${text}</span>`;
+    bubble.classList.add("user-bubble"); // user styling
+    bubble.innerHTML = `<b>You:</b> ${text}`;
   } else if (sender === "system") {
-    senderColor = "text-purple-400";
-    senderIcon = "";
-    div.innerHTML = `<span class="message ${senderColor}"><b>${senderIcon} System:</b> ${text}</span>`;
+    bubble.classList.add("system-bubble"); // system styling
+    bubble.innerHTML = `<b>System:</b> ${text}`;
   }
 
+  div.appendChild(bubble);
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+
 
 async function sendMessage() {
   const input = document.getElementById("userInput");
