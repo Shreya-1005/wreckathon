@@ -5,6 +5,7 @@
     <title>Haunted Roast Bot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   </head>
   <body class="min-h-screen bg-black stars flex overflow-hidden">
 
@@ -17,22 +18,24 @@
     <div class="flex-1 relative flex items-center justify-center overflow-hidden p-8">
       <div class="moon mirrored-moon"></div>
       <div class="max-w-lg w-full chat-container p-6">
-        <h1 id="ghostName" class="text-2xl font-bold glitch text-red-500 text-center mb-4">
+        <h1 id="ghostName" data-text="Connecting to the other realm..." class="text-2xl font-bold glitch text-red-500 text-center mb-4">
            Connecting to the other realm...
         </h1>
-        <div id="chatBox" class="h-80 bg-black/30 p-3 rounded-lg border border-gray-700 mb-4"></div>
+        <div id="chatBox" class="h-80 bg-black/30 p-3 rounded-lg border border-gray-700 mb-4">
+          <p id="startMessage" class="start-message"></p>
+        </div>
 
         <div class="flex gap-2">
           <input
             id="userInput"
             type="text"
-            placeholder="Speak to the spirits..."
-            class="flex-1 p-2 rounded-lg bg-gray-900/50 border border-gray-600 text-white placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+            placeholder="Do you dare?..."
+            class="user-input"
             onkeypress="if(event.key==='Enter') sendMessage()"
           />
           <button
             onclick="sendMessage()"
-            class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-colors duration-200 text-white font-medium shadow-lg hover:shadow-red-500/25"
+            class="send-btn"
           >
              Send
           </button>

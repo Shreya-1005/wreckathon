@@ -3,7 +3,7 @@ body {
     color: #eee;
     font-family: "Courier New", monospace;
 }
-.glitch {
+/*.glitch {
     animation: glitch 1s infinite;
 }
 
@@ -11,7 +11,40 @@ body {
     0% { text-shadow: 2px 2px red; }
     50% { text-shadow: -2px -2px lime; }
     100% { text-shadow: 2px -2px blue; }
+}*/
+
+/* Haunted Heading */
+#ghostName {
+  font-family: 'Creepster', cursive, sans-serif; /* spooky font */
+  font-size: 2rem;
+  text-align: center;
+  color: #000000;
+  text-shadow: 
+    0 0 5px #8b0000,
+    0 0 10px #ff0000,
+    0 0 15px #660000;
+  animation: spookyFlicker 4s infinite;
+  letter-spacing: 2px;
+  position: relative;
 }
+
+
+
+@keyframes spookyFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px #8b0000,
+      0 0 15px #ff0000,
+      0 0 30px #660000;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+
 .stars {
     background-image: 
       radial-gradient(1px 1px at 50px 50px, rgba(255,255,255,0.8), transparent),
@@ -99,4 +132,99 @@ body {
 
 #chatBox::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 0, 0, 0.9);
+}
+
+.user-input{ 
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: border-color 0.3s ease;
+}
+.user-input:focus {
+  outline: none;
+}
+.user-input:hover {
+  border-color: rgba(255, 30, 30, 0.526);
+  box-shadow: 0 0 5px rgba(255, 30, 30, 0.526);
+}
+
+/* Style input + fake placeholder */
+#userInput {
+    position: relative;
+}
+#userInput::placeholder {
+    opacity: 1;
+    transition: opacity 0.8s ease; /* 👻 fade only text */
+}
+#userInput.fade::placeholder {
+    opacity: 0;
+}
+
+/* spooky fade animation */
+#userInput.fade::placeholder {
+    animation: fadeOutIn 1.5s;
+}
+@keyframes fadeOutIn {
+    0% { opacity: 1; }
+    40% { opacity: 0; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.send-btn {
+    padding: 0.5rem 1rem;
+    background-color: #6c0606;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+.send-btn:hover {
+  box-shadow: 0 0 10px #ff2828;
+}
+
+/* Center big spooky intro */
+.start-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  font-family: 'Creepster', cursive, sans-serif;
+  text-align: center;
+  color: #2f0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #800000;
+  animation: flicker 2s infinite;
+  pointer-events: none;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #800000;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+}
+
+/* Spooky fade zoom animation */
+@keyframes hauntFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+.haunt-fade {
+  animation: hauntFade 2s ease forwards;
 }

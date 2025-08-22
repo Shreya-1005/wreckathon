@@ -12,14 +12,14 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // 👻 List of famous ghosts
 const ghosts = [
-  "Annabelle 🪆",
-  "La Llorona 🌊",
-  "Bloody Mary 🪞",
-  "Charlie Charlie ✏️",
-  "Hanako-san 🚽",
-  "The Nun ⛪",
-  "Slenderman 🌲",
-  "Pennywise 🎈"
+  "Annabelle",
+  "La Llorona",
+  "Bloody Mary",
+  "Charlie Charlie",
+  "Hanako-san",
+  "The Nun",
+  "Slenderman",
+  "Pennywise"
 ];
 
 // Random ghost interruptions
