@@ -55,15 +55,15 @@ function appendMessage(sender, text) {
   let senderIcon = "";
 
   if (sender === "ghost") {
-    const ghostName = window.currentGhost || "👻";
+    const ghostName = window.currentGhost || "";
     div.innerHTML = `<span class="message ${senderColor}"><b>${ghostName}:</b> ${text}</span>`;
   } else if (sender === "you") {
     senderColor = "text-blue-400";
-    senderIcon = "🧿";
+    senderIcon = "";
     div.innerHTML = `<span class="message ${senderColor}"><b>${senderIcon} You:</b> ${text}</span>`;
   } else if (sender === "system") {
     senderColor = "text-purple-400";
-    senderIcon = "🔮";
+    senderIcon = "";
     div.innerHTML = `<span class="message ${senderColor}"><b>${senderIcon} System:</b> ${text}</span>`;
   }
 
@@ -84,7 +84,7 @@ async function sendMessage() {
   }
   input.value = "";
 
-  // 👻 rotate placeholder after message sent
+  // rotate placeholder after message sent
         if (!firstUsed) {
           firstUsed = true; // first one ("The silence was safer…") stays only once
         } else {
@@ -101,7 +101,7 @@ async function sendMessage() {
 
     if (!res.ok) {
       if (res.status === 429) {
-        appendMessage("ghost", "😈 Whoa there! Try typing slower, you impatient mortal...");
+        appendMessage("ghost", "Whoa there! Try typing slower, you impatient mortal...");
         return;
       } else {
         throw new Error(res.statusText);
@@ -126,7 +126,7 @@ async function sendMessage() {
 // Initialize connection
 initGhost();
 setTimeout(() => {
-  appendMessage("", "🕯️ The candles flicker as spirits gather... 🕯️");
+  appendMessage("", "The candles flicker as spirits gather...");
 }, 2000);
 
 // === Beginning text animation ===

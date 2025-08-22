@@ -10,7 +10,7 @@ app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// 👻 List of famous ghosts
+//  List of famous ghosts
 const ghosts = [
   "Annabelle",
   "La Llorona",
@@ -24,12 +24,12 @@ const ghosts = [
 
 // Random ghost interruptions
 const ghostInterruptions = [
-  "👁 I see you typing too fast...",
-  "🔪 The floor creaks behind you.",
-  "🕰 Don’t look at the clock after midnight.",
-  "💀 Someone is standing right behind you.",
-  "📞 Don't pick up unknown calls at 3:12 AM.",
-  "🕷 Did that shadow just move, or was it you?"
+  "I see you typing too fast...",
+  "The floor creaks behind you.",
+  "Don’t look at the clock after midnight.",
+  "Someone is standing right behind you.",
+  "Don't pick up unknown calls at 3:12 AM.",
+  "Did that shadow just move, or was it you?"
 ];
 
 // Assign random ghost to each user (super basic version)
@@ -86,5 +86,5 @@ app.get("/interrupt", (req, res) => {
 
 // Start server
 app.listen(8080, () =>
-  console.log("👻 Haunted Roast Bot API running on http://localhost:8080")
+  console.log("Haunted Roast Bot API running on http://localhost:8080")
 );
