@@ -84,9 +84,9 @@ async function sendMessage() {
   }
   input.value = "";
 
-  // rotate placeholder after message sent
+  
         if (!firstUsed) {
-          firstUsed = true; // first one ("The silence was safer…") stays only once
+          firstUsed = true;
         } else {
           changePlaceholder(spookyPlaceholders[phIndex]);
           phIndex = (phIndex + 1) % spookyPlaceholders.length;

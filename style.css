@@ -3,17 +3,7 @@ body {
     color: #eee;
     font-family: "Courier New", monospace;
 }
-/*.glitch {
-    animation: glitch 1s infinite;
-}
 
-@keyframes glitch { 
-    0% { text-shadow: 2px 2px red; }
-    50% { text-shadow: -2px -2px lime; }
-    100% { text-shadow: 2px -2px blue; }
-}*/
-
-/* Haunted Heading */
 #ghostName {
   font-family: 'Creepster', cursive, sans-serif; /* spooky font */
   font-size: 2rem;
@@ -151,19 +141,19 @@ body {
   box-shadow: 0 0 5px rgba(255, 30, 30, 0.526);
 }
 
-/* Style input + fake placeholder */
+
 #userInput {
     position: relative;
 }
 #userInput::placeholder {
     opacity: 1;
-    transition: opacity 0.8s ease; /* 👻 fade only text */
+    transition: opacity 0.8s ease; 
 }
 #userInput.fade::placeholder {
     opacity: 0;
 }
 
-/* spooky fade animation */
+
 #userInput.fade::placeholder {
     animation: fadeOutIn 1.5s;
 }
@@ -186,7 +176,7 @@ body {
   box-shadow: 0 0 10px #ff2828;
 }
 
-/* Center big spooky intro */
+
 .start-message {
   position: absolute;
   top: 50%;
@@ -201,7 +191,7 @@ body {
   pointer-events: none;
 }
 
-/* Flicker animation */
+
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
     opacity: 1;
@@ -213,7 +203,7 @@ body {
   }
 }
 
-/* Spooky fade zoom animation */
+
 @keyframes hauntFade {
   0% {
     opacity: 1;
@@ -229,11 +219,11 @@ body {
   animation: hauntFade 2s ease forwards;
 }
 
-/* Footer */
+
 .footer {
   margin-bottom: 10px;
   position: fixed;
-  bottom: 10px;   /* a little gap from the edge */
+  bottom: 10px;  
   left: 50%;
   transform: translateX(-50%);
   color: white;

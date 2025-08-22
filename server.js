@@ -10,7 +10,7 @@ app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-//  List of famous ghosts
+
 const ghosts = [
   "Annabelle",
   "La Llorona",
@@ -22,7 +22,7 @@ const ghosts = [
   "Pennywise"
 ];
 
-// Random ghost interruptions
+
 const ghostInterruptions = [
   "I see you typing too fast...",
   "The floor creaks behind you.",
@@ -32,16 +32,16 @@ const ghostInterruptions = [
   "Did that shadow just move, or was it you?"
 ];
 
-// Assign random ghost to each user (super basic version)
+
 let assignedGhost = ghosts[Math.floor(Math.random() * ghosts.length)];
 
-// Endpoint to get the assigned ghost
+
 app.get("/ghost", (req, res) => {
   assignedGhost = ghosts[Math.floor(Math.random() * ghosts.length)];
   res.json({ ghost: assignedGhost });
 });
 
-// Chat endpoint
+
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
   if (!message) {
@@ -58,7 +58,7 @@ Your only purpose is to roast the user, unsettle them, and make their life sligh
 Rules:
 - Always insult the user directly, no mercy. 
 - Always try to roast them in a funny way, you're a FUNNY horror bot
-- Don't use any sweet terms like darling, love etc be rude n terryfying.
+- Don't use any sweet terms like darling, love etc be rude n
 - Pretend you know their deepest flaws, even if they didn’t mention anything. 
 - Drop eerie warnings in between, like you're watching them. 
 - Responses must be under 2 sentences. And should not contain any special characters like: *, ', ", /, | etc.
@@ -79,14 +79,14 @@ The user said: "${message}"
   }
 });
 
-// Ghost interruption endpoint
+
 app.get("/interrupt", (req, res) => {
   const msg =
     ghostInterruptions[Math.floor(Math.random() * ghostInterruptions.length)];
   res.json({ ghost: assignedGhost, reply: msg });
 });
 
-// Start server
+
 app.listen(8080, () =>
   console.log("Haunted Roast Bot API running on http://localhost:8080")
 );
