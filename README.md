@@ -10,8 +10,6 @@ This one? It summons **cursed spirits** whose only job is to **insult you**.
 
 Instead of a friendly AI, you’ll be roasted by legends like:
 
-*Link to the video:* https://www.canva.com/design/DAGw0GG7tkI/Ptgm2Xec_tgKgjOjO1a8NA/edit?utm_content=DAGw0GG7tkI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
 
 - **Annabelle** – Creepy doll energy, passive-aggressive burns.  
 - **Bloody Mary** – Shows up when you least want her, and never with compliments.  
@@ -35,7 +33,9 @@ Every conversation feels like a séance gone wrong 😭😭
 
 ---
 
-## 📸 Sneak Peek
+📽️*Link to the video:* https://www.canva.com/design/DAGw0GG7tkI/Ptgm2Xec_tgKgjOjO1a8NA/edit?utm_content=DAGw0GG7tkI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+*📸 Sneak Peek*
 ![WhatsApp Image 2025-08-22 at 20 51 32_4d3969b6](https://github.com/user-attachments/assets/23e66a1f-ad84-4ffd-a9ac-f20d199fb1d3)
 
 
