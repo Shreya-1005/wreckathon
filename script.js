@@ -1,7 +1,7 @@
 const API_BASE = "http://localhost:8080";
 let ghost = "";
 
- // 👻 spooky placeholder setup
+
 let firstUsed = false;
 const input = document.getElementById("userInput");
 
@@ -18,12 +18,12 @@ const spookyPlaceholders = [
 let phIndex = 0;
 
 function changePlaceholder(text) {
-// fade out
+
   input.classList.add("fade");
   setTimeout(() => {
-    input.placeholder = text; // swap text while invisible
-    input.classList.remove("fade"); // fade back in
-  }, 400); // half duration of transition
+    input.placeholder = text; 
+    input.classList.remove("fade"); 
+  }, 400);
 }
 
 async function initGhost() {
@@ -45,27 +45,27 @@ function appendMessage(sender, text) {
   const chatBox = document.getElementById("chatBox");
   const div = document.createElement("div");
 
-  // Container alignment
+  
   div.className =
     sender === "you"
-      ? "flex justify-end mb-2" // user messages right
+      ? "flex justify-end mb-2"
       : sender === "system"
       ? "flex justify-center mb-3"
-      : "flex justify-start mb-3"; // ghost/bot messages left
+      : "flex justify-start mb-3";
 
-  // Bubble
+  
   const bubble = document.createElement("span");
-  bubble.className = "chat-bubble"; // base bubble styling
+  bubble.className = "chat-bubble"; 
 
   if (sender === "ghost") {
     const ghostName = window.currentGhost || "Ghost";
-    bubble.classList.add("bot-bubble"); // bot styling
+    bubble.classList.add("bot-bubble"); 
     bubble.innerHTML = `<b>${ghostName}:</b> ${text}`;
   } else if (sender === "you") {
-    bubble.classList.add("user-bubble"); // user styling
+    bubble.classList.add("user-bubble"); 
     bubble.innerHTML = `<b>You:</b> ${text}`;
   } else if (sender === "system") {
-    bubble.classList.add("system-bubble"); // system styling
+    bubble.classList.add("system-bubble"); 
     bubble.innerHTML = `<b>System:</b> ${text}`;
   }
 
@@ -83,7 +83,7 @@ async function sendMessage() {
 
   appendMessage("you", msg);
 
-  // fade out "The Beginning" only on the first real message
+
   if (startMessage && !firstUsed) {
     fadeOutBeginning();
   }
@@ -128,15 +128,15 @@ async function sendMessage() {
   }
 }
 
-// Initialize connection
+
 initGhost();
 setTimeout(() => {
   appendMessage("", "The candles flicker as spirits gather...");
 }, 2000);
 
-// === Beginning text animation ===
+
 const startMessage = document.getElementById("startMessage");
-const introLines = ["The", "Beginning"]; // separate lines
+const introLines = ["The", "Beginning"]; 
 let lineIndex = 0;
 let charIndex = 0;
 
@@ -147,24 +147,24 @@ function typeWriterIntro() {
       charIndex++;
       setTimeout(typeWriterIntro, 150);
     } else {
-      // Finished a line → add line break
+      
       if (lineIndex < introLines.length - 1) {
         startMessage.innerHTML += "<br/>";
       }
       lineIndex++;
       charIndex = 0;
-      setTimeout(typeWriterIntro, 400); // pause before next line
+      setTimeout(typeWriterIntro, 400); 
     }
   }
 }
 typeWriterIntro();
 
-// === Fade-out trigger without redefining sendMessage ===
+
 function fadeOutBeginning() {
   if (startMessage) {
     startMessage.classList.remove("flicker");
     startMessage.classList.add("haunt-fade");
-    // remove from DOM after animation ends
+    
     startMessage.addEventListener("animationend", () => {
       startMessage.remove();
     });
@@ -173,7 +173,7 @@ function fadeOutBeginning() {
 
 
 
-// Hook into first send (button + enter key) to fade out "The Beginning"
+
 document.getElementById("userInput").addEventListener("keydown", (e) => {
   if (e.key === "Enter" && e.target.value.trim() !== "") {
     fadeOutBeginning();
