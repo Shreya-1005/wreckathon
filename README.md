@@ -39,7 +39,7 @@ Every conversation feels like a séance gone wrong 😭😭
 ---
 
 ## ⚙️ Tech Stack
-- **Frontend:** HTML, CSS 
+- **Frontend:** HTML, CSS, JS
 - **Backend:** Node.js, Express.js  
 - **Hauntings:** Google Gemini API (with a cursed twist)  
 
@@ -75,5 +75,5 @@ If you’re still here:
 Remember… the roast isn’t personal.
 They hate everyone equally ❤️
 
-<sub>This is the repo for Wreckathon, a haunted roast bot built for Oblivion ‘25. 🧛🏻😈</sub>
+<sub>This is the repo for Wreckathon, a haunted roast bot built for Oblivion ‘25. 🧛🏻😈</sub><br/>
 <sub>Made with 🕯️ and 👻 by 404: Not Found</sub>
