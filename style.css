@@ -228,3 +228,16 @@ body {
 .haunt-fade {
   animation: hauntFade 2s ease forwards;
 }
+
+/* Footer */
+.footer {
+  margin-bottom: 10px;
+  position: fixed;
+  bottom: 10px;   /* a little gap from the edge */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: center;
+}
